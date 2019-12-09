@@ -88,7 +88,7 @@ public:
         if (has_heatcr)
             initHeatcr_(deck, eclState, compressedToCartesianElemIdx);
         else if (deck.hasKeyword("SPECROCK"))
-            initSpecrock_(deck, eclState, compressedToCartesianElemIdx);
+            initSpecrock_(deck, eclState);
         else
             initNullRockEnergy_(deck, eclState, compressedToCartesianElemIdx);
 
@@ -188,8 +188,7 @@ private:
      * \brief Initialize the parameters for the solid energy law using using SPECROCK and friends.
      */
     void initSpecrock_(const Opm::Deck& deck OPM_UNUSED,
-                       const Opm::EclipseState& eclState,
-                       const std::vector<int>& compressedToCartesianElemIdx)
+                       const Opm::EclipseState& eclState)
     {
         solidEnergyApproach_ = SolidEnergyLawParams::specrockApproach;
 

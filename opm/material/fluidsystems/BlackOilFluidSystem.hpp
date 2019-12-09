@@ -1263,6 +1263,7 @@ private:
         referenceDensity_.resize(numRegions);
     }
 
+public:
     static Scalar reservoirTemperature_;
 
     static std::shared_ptr<GasPvt> gasPvt_;

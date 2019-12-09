@@ -51,6 +51,20 @@ public:
     static const unsigned gasCompIdx = 2;
 };
 
+class EclAlternativeBlackOilIndexTraits
+{
+    typedef Opm::BlackOilDefaultIndexTraits DIT;
+
+public:
+    static const unsigned waterPhaseIdx = DIT::oilPhaseIdx;
+    static const unsigned oilPhaseIdx = DIT::gasPhaseIdx;
+    static const unsigned gasPhaseIdx = DIT::waterPhaseIdx;
+
+    static const unsigned waterCompIdx = DIT::gasCompIdx;
+    static const unsigned oilCompIdx = DIT::waterCompIdx;
+    static const unsigned gasCompIdx = DIT::oilCompIdx;
+};
+
 } // namespace Opm
 
 #endif
